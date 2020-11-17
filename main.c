@@ -14,7 +14,7 @@
 #include <fcntl.h>
 #include "get_next_line.h"
 
-int main()
+/*int main()
 {
  	char *line;
  	int fd1 = open("file1.txt", O_RDONLY);
@@ -35,15 +35,15 @@ int main()
  		free(line);
  		i++;
  	}
-}
+}*/
 
-/*int main()
+int main()
 {
 	char *line;
 	int fd = open("file1.txt", O_RDONLY);
 	int fd1 = open("1_newline", O_RDONLY);
 	int fd2 = open("4_newlines", O_RDONLY);
-	int fd3 = open("alphabet", O_RDONLY);
+//	int fd3 = open("alphabet", O_RDONLY);
 	int res;
 	int i;
 	
@@ -82,4 +82,4 @@ int main()
 	printf("|%s|\n", line);
 	free(line);
 	close(fd2);
-}*/
+}
