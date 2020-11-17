@@ -1,4 +1,4 @@
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int	check_remainder(char **remainder, char **line)
 {
@@ -57,7 +57,7 @@ int	get_line(int fd, char **line, char **remainder, char **buf)
 
 int	get_next_line(int fd, char **line)
 {
-	static	char	*remainder;
+	static	char	*remainder[1000];
 	int		res;
 	char		*buf;
 
@@ -65,11 +65,11 @@ int	get_next_line(int fd, char **line)
 		return (-1);
 	if (!(*line = ft_strdup("")) || !(buf = (char*)malloc(BUFFER_SIZE + 1)))
 		return (-1);
-	if ((res = check_remainder(&remainder, line)) > 0)
+	if ((res = check_remainder(&remainder[fd], line)) > 0)
 		return (1);
 	else if (res == -1)
 		return (-1);
-	if ((res = get_line(fd, line, &remainder, &buf)) < 0)
+	if ((res = get_line(fd, line, &remainder[fd], &buf)) < 0)
 		return (-1);
 	return (res > 0 ? 1 : 0);
 }

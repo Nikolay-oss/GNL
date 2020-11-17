@@ -14,30 +14,30 @@
 #include <fcntl.h>
 #include "get_next_line.h"
 
-// int main()
-// {
-// 	char *line;
-// 	int fd1 = open("file.txt", O_RDONLY);
-// 	int fd2 = open("file1.txt", O_RDONLY);
-// 	int fd3 = open("file2.txt", O_RDONLY);
-// 	int i = 0;
-
-// 	while (i < 5)
-// 	{
-// 		get_next_line(fd1, &line);
-// 		printf("|%s|\n", line);
-// 		free(line);
-// 		get_next_line(fd2, &line);
-// 		printf("||%s||\n", line);
-// 		free(line);
-// 		get_next_line(fd3, &line);
-// 		printf("|||%s|||\n", line);
-// 		free(line);
-// 		i++;
-// 	}
-// }
-
 int main()
+{
+ 	char *line;
+ 	int fd1 = open("file1.txt", O_RDONLY);
+ 	int fd2 = open("1_newline", O_RDONLY);
+ 	int fd3 = open("4_newlines", O_RDONLY);
+ 	int i = 0;
+
+ 	while (i < 5)
+ 	{
+ 		printf("gnl -> %d\n", get_next_line(fd1, &line));
+ 		printf("|%s|\n", line);
+ 		free(line);
+ 		get_next_line(fd2, &line);
+ 		printf("||%s||\n", line);
+ 		free(line);
+ 		get_next_line(fd3, &line);
+ 		printf("|||%s|||\n", line);
+ 		free(line);
+ 		i++;
+ 	}
+}
+
+/*int main()
 {
 	char *line;
 	int fd = open("file1.txt", O_RDONLY);
@@ -82,4 +82,4 @@ int main()
 	printf("|%s|\n", line);
 	free(line);
 	close(fd2);
-}
+}*/
