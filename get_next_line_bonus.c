@@ -57,7 +57,7 @@ int	get_line(int fd, char **line, char **remainder, char **buf)
 
 int	get_next_line(int fd, char **line)
 {
-	static	char	*remainder[1000];
+	static	char	*remainder[1024];
 	int		res;
 	char		*buf;
 
