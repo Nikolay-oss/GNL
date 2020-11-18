@@ -6,7 +6,7 @@
 /*   By: dkenchur <dkenchur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 15:10:08 by dkenchur          #+#    #+#             */
-/*   Updated: 2020/11/15 15:24:17 by dkenchur         ###   ########.fr       */
+/*   Updated: 2020/11/18 12:57:10 by dkenchur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 
 int		get_next_line(int fd, char **line);
 char	*ft_strdup(const char *s1);
-char	*ft_strndup(const char *s1);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strchr(const char *s, int c);
 #endif

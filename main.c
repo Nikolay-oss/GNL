@@ -6,7 +6,7 @@
 /*   By: dkenchur <dkenchur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 15:24:53 by dkenchur          #+#    #+#             */
-/*   Updated: 2020/11/16 22:15:30 by dkenchur         ###   ########.fr       */
+/*   Updated: 2020/11/18 11:41:37 by dkenchur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ int main()
 {
 	char *line;
 	int fd = open("file1.txt", O_RDONLY);
-	int fd1 = open("1_newline", O_RDONLY);
+	int fd1 = open("mix_marge1", O_RDONLY);
 	int fd2 = open("4_newlines", O_RDONLY);
-//	int fd3 = open("alphabet", O_RDONLY);
+	int fd3 = open("43_char", O_RDONLY);
 	int res;
 	int i;
 	
@@ -82,4 +82,15 @@ int main()
 	printf("|%s|\n", line);
 	free(line);
 	close(fd2);
+	printf("===============================\n");
+	while ((res = get_next_line(fd3, &line)) > 0)
+	{
+		printf("<%d>\n", res);
+		printf("|%s|\n", line);
+		free(line);
+	}
+	printf("<%d>\n", res);
+	printf("|%s|\n", line);
+	free(line);
+	close(fd3);
 }

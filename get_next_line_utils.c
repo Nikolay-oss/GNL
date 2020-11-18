@@ -6,7 +6,7 @@
 /*   By: dkenchur <dkenchur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 17:04:48 by dkenchur          #+#    #+#             */
-/*   Updated: 2020/11/15 12:43:20 by dkenchur         ###   ########.fr       */
+/*   Updated: 2020/11/18 13:04:47 by dkenchur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,33 +51,8 @@ char			*ft_strdup(const char *s1)
 	if (!s1)
 		return (NULL);
 	size = ft_strlen(s1);
-	str = (char*)malloc(sizeof(char) * size + 1);
+	str = (char*)malloc(sizeof(char) * (size + 1));
 	if (!str)
-		return (str);
-	i = 0;
-	while (i < size)
-	{
-		*(str + i) = *(s1 + i);
-		i++;
-	}
-	*(str + i) = '\0';
-	return (str);
-}
-
-char			*ft_strndup(const char *s1)
-{
-	size_t	size;
-	char	*str;
-	size_t	i;
-	char	*p_n;
-
-	if (!s1)
-		return (NULL);
-	if ((p_n = ft_strchr(s1, '\n')))
-		size = p_n - s1;
-	else
-		size = ft_strlen(s1);
-	if (!(str = (char*)malloc(size + 1)))
 		return (str);
 	i = 0;
 	while (i < size)
